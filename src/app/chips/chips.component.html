@@ -1,0 +1,28 @@
+<div class="container-fluid content">
+  <div class="row row-cols-1 row-cols-md-3 row-cols-xl-6 align-items-center">
+
+    <div *ngFor="let task of tasks" class="col" style="margin-bottom:0.5rem;">
+      <mat-chip-list>
+        <mat-chip color="primary" #chip style="width:100%;"
+                  [selectable]="selectable"
+                  [removable]="removable"
+                  (removed)="remove(task)">
+          <div class="container-fluid content full-height" >
+            <div class="row row-cols-12 align-items-center " style="height:100%;padding:0.5rem;" >
+              <div class="col-9" style="display: inline-block; ">
+                <div><strong>{{ task.name }}</strong></div>
+                <div>{{ task.fixdate | date: 'dd.MM.yyyy'}}</div>
+                <div>{{ task.description}}</div>
+              </div>
+              <div class="col-3 full-height">
+                <mat-icon matChipRemove *ngIf="removable" class="full-height">cancel</mat-icon>
+              </div>
+            </div>
+          </div>
+        </mat-chip>
+      </mat-chip-list>
+
+
+    </div>
+  </div>
+</div>

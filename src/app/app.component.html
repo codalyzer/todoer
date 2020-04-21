@@ -1,0 +1,19 @@
+<!-- Toolbar -->
+<div class="toolbar">
+  <span>Todo List Manager</span>
+</div>
+
+
+<div style="padding-left:10px;">
+  <app-chip (addTask)="addChip($event)"></app-chip>
+</div>
+
+<br/>
+<br/>
+
+<app-chips [tasks]="tasks"></app-chips>
+
+<!--<pre>-->
+<!--  {{tasks | json}}-->
+<!--</pre>-->
+<!--<router-outlet></router-outlet>-->

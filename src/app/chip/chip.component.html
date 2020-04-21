@@ -1,0 +1,47 @@
+<div class="container" style="margin-top: 2rem; margin-left:0.5rem;">
+  <div class="row row-cols-1" style="width:100%;margin-bottom:0.5rem;">
+    <div class="col-12 col-sm-4 col-md-2 full-width">
+      <mat-label>Task name</mat-label>
+    </div>
+    <div class="col-12 col-sm-8 col-md-5 full-width">
+      <input
+        matInput
+        disabled
+        value="{{task.name}}"
+        style="width:100%;"/>
+    </div>
+  </div>
+  <div class="row row-cols-1" style="width:100%;margin-bottom:0.5rem;">
+    <div class="col-12 col-sm-4 col-md-2 full-width">
+      <mat-label>Description</mat-label>
+    </div>
+    <div class="col-12 col-sm-8 col-md-5 full-width">
+      <textarea
+        matInput
+        placeholder="description"
+        [(ngModel)]="task.description"
+        style="width:100%;">
+    </textarea>
+    </div>
+  </div>
+  <div class="row row-cols-1" style="width:100%;margin-bottom:0.5rem;">
+    <div class="col-12 col-sm-4 col-md-2 full-width">
+      <mat-label>Finish date</mat-label>
+    </div>
+    <div class="col-12 col-sm-8 col-md-5 full-width">
+      <input
+        matInput
+        placeholder="Date"
+        [matDatepicker]="myDatepicker"
+        [(ngModel)]="task.fixdate"
+        style="width:80%">
+      <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker></mat-datepicker>
+    </div>
+  </div>
+
+</div>
+
+<button mat-raised-button color="primary" (click)="emitTask()" style="margin:1.5rem;">Add Task</button>
+
+
